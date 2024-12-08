@@ -21,7 +21,24 @@
 #define yes printf("Yes\n");
 #define no printf("No\n");
 using namespace std;
-
+string max_freq(string &str){
+    vector<int>freq(26,0);
+    
+    
+    for(char c: str){
+        freq[c -'a']++;
+    }
+    char high='';
+    int check=-1;
+    for (int i = 0; i < 26; i++) {
+        if (freq[i] > max_freq) {
+            check= freq[i];
+            high= 'a' + i; 
+        }
+    }
+    return high;
+    
+}
 void solve(){
                 int a,b,c,d;cin>>a>>b>>c>>d;
 
